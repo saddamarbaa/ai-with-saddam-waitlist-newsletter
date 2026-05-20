@@ -8,24 +8,28 @@ import { Reveal } from "@/components/reveal";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 items-center justify-center px-6 py-16 sm:py-20">
-      <div className="mx-auto flex w-full max-w-[720px] flex-col items-center text-center">
-        <h1 className="sr-only">{site.name}</h1>
-
-        <Reveal delay={0} className="w-full">
-          <div className="overflow-hidden rounded-2xl shadow-md ring-1 ring-black/5">
+    <main className="flex flex-1 items-center justify-center px-6 py-16 sm:py-24">
+      <div className="mx-auto flex w-full max-w-[600px] flex-col items-center text-center">
+        <Reveal delay={0}>
+          <div className="overflow-hidden rounded-2xl bg-brand shadow-sm ring-1 ring-black/5">
             <Image
-              src={site.heroImage}
-              alt={site.heroAlt}
-              width={1536}
-              height={864}
+              src={site.profileImage}
+              alt={site.name}
+              width={280}
+              height={280}
               priority
-              className="aspect-[16/9] w-full object-cover"
+              className="size-[220px] object-cover sm:size-[280px]"
             />
           </div>
         </Reveal>
 
-        <Reveal delay={0.16} className="mt-8">
+        <Reveal delay={0.08} className="mt-8">
+          <h1 className="font-serif text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            {site.name}
+          </h1>
+        </Reveal>
+
+        <Reveal delay={0.16} className="mt-3">
           <p className="max-w-md text-base leading-relaxed text-muted-foreground sm:text-lg">
             {site.tagline}
           </p>
