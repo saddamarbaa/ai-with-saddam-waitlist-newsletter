@@ -5,6 +5,8 @@ export const site = {
   bylineName: "Saddam",
   subscriberCount: "2,000+",
   profileImage: "/profile.svg",
+  heroImage: "/hero.svg",
+  heroAlt: "Saddam Arbaa — AI Engineering | Software Engineer",
   brandColor: "#5B4BE8",
   ogTitle: "AI with Saddam — Join the waitlist",
   ogDescription:
