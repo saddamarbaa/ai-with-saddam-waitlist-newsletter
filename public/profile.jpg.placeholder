@@ -1,0 +1,2 @@
+Drop your headshot here as `profile.jpg` (or update `site.profileImage` in src/config/site.ts).
+The page expects a roughly square image (about 560x560 looks crisp on retina).
