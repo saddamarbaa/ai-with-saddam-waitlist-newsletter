@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI with Saddam — Waitlist
 
-## Getting Started
+A single-page subscribe / waitlist landing page for the **AI with Saddam** newsletter.
 
-First, run the development server:
+Built with **Next.js (App Router)**, **TypeScript**, **Tailwind CSS v4**, **shadcn/ui**, **Framer Motion**, and **react-hook-form + zod**.
+
+## Quick start
+
+> Requires **Node.js ≥ 20.9** (Next.js 16). If you use `nvm`, run `nvm use 20`.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rebrand in one place
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+All copy, links, and brand colour live in [`src/config/site.ts`](src/config/site.ts):
 
-## Learn More
+```ts
+export const site = {
+  name: "AI with Saddam",
+  tagline: "I'm on a mission to create 365 AI Engineers in the next 365 days.",
+  bylineName: "Saddam",
+  subscriberCount: "2,000+",
+  profileImage: "/profile.svg",   // drop your headshot here as /public/profile.jpg
+  brandColor: "#5B4BE8",
+  // …links
+};
+```
 
-To learn more about Next.js, take a look at the following resources:
+Drop your headshot at `public/profile.jpg` and point `profileImage` at it. The bundled `/profile.svg` is just a placeholder.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What's inside
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Server action** `subscribe(email)` in [`src/app/actions.ts`](src/app/actions.ts). For now it logs the email — wire up ConvertKit / Beehiiv / Mailchimp / Supabase where the `TODO` comment is.
+- **Form** ([`src/components/subscribe-form.tsx`](src/components/subscribe-form.tsx)) — zod-validated, RHF, animated success state via `AnimatePresence`, toast feedback via Sonner.
+- **Staggered entrance** ([`src/components/reveal.tsx`](src/components/reveal.tsx)) — photo → heading → tagline → byline → form, kept subtle and fast.
+- **Brand colour** exposed as a CSS variable (`--brand`) and Tailwind token (`bg-brand`, `text-brand`) in [`src/app/globals.css`](src/app/globals.css).
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Push to GitHub, then import into **Vercel** — zero config. Set the Node version to 20.x in project settings if Vercel doesn't pick it up automatically.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+| Script           | Purpose                       |
+| ---------------- | ----------------------------- |
+| `npm run dev`    | Local dev server (Turbopack)  |
+| `npm run build`  | Production build              |
+| `npm run start`  | Run the production build      |
+| `npm run lint`   | ESLint                        |
