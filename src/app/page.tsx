@@ -11,7 +11,7 @@ export default function Home() {
     <main className="flex flex-1 items-center justify-center px-6 py-16 sm:py-24">
       <div className="mx-auto flex w-full max-w-[600px] flex-col items-center text-center">
         <Reveal delay={0}>
-          <div className="overflow-hidden rounded-2xl bg-brand shadow-sm ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-2xl shadow-sm ring-1 ring-black/5">
             <Image
               src={site.profileImage}
               alt={site.name}

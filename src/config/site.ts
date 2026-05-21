@@ -4,7 +4,7 @@ export const site = {
     "I'm on a mission to create 365 AI Engineers in the next 365 days.",
   bylineName: "Saddam",
   subscriberCount: "2,000+",
-  profileImage: "/profile.svg",
+  profileImage: "/profile.jpg",
   brandColor: "#5B4BE8",
   ogTitle: "AI with Saddam — Join the waitlist",
   ogDescription:
